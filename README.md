@@ -35,3 +35,5 @@ Download the example file and extract it.
 	GCF_002865965.1		0	1	1	1	1	2	0	0	0	1	0
 	GCF_002952315.1		0	0	0	0	0	1	1	0	0	0	0
 	GCF_900068895.1		1	0	0	2	0	1	1	1	1	1	1
+
+The script plot_heat_dendro.R is recommended if you want to plot some figures.
