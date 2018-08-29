@@ -101,16 +101,25 @@ for genome, value in sorted(dict_rslt.iteritems()):
 					if seq_feature.type=="cluster":
 
 						try:
-
 							cluster_type = seq_feature.qualifiers['product'][0]
 							#print source
 						except (KeyError, IndexError):
 
 							source = 'NA'
+							
+					elif seq_feature.type=="source":
+						try:
+							source = seq_feature.qualifiers['organism'][0]
+						except (KeyError, IndexError):
+							source = 'NA'
+							
+						try:
+							strain = seq_feature.qualifiers['strain'][0].replace( ' ', '').replace('/', '')
+						except (KeyError, IndexError):
+							strain = 'NA'
 						
-
-						fasta_fna.write(">%s|%s|%s\n%s\n" % (seq_record.id, cluster, cluster_type,  seq_record.seq))
-
+						fasta_fna.write(">%s|%s|%s|%s|%s\n%s\n" % (seq_record.id, source, strain, cluster, cluster_type,  seq_record.seq))
+						
 			for seq_feature in seq_record.features:
 
 				if seq_feature.type=="source":
