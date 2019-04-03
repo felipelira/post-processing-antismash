@@ -1,4 +1,4 @@
-# post-processing-antismash
+# post-processing-antismash-4_results
 
 The script extract_clusters_antismash.py was designed to process inoumerous outputs from Antismash cluster detector.
 
